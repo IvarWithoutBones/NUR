@@ -1,8 +1,8 @@
-### Up-to-date versions of yuzu and Ryujinx for nix
+# Up-to-date versions of yuzu and Ryujinx for nix
 This NUR repo contains up to date versions of [Ryujinx](https://github.com/ryujinx/ryujinx), [yuzu-mainline](https://github.com/yuzu-emu/yuzu-mainline) and [yuzu-ea](https://github.com/pineappleEA/pineapple-src).
 These packages take quite a while to compile, so I've set up a binary cache using [cachix](https://app.cachix.org/).
 
-# Instructions
+### Instructions
 First of all, you should install the [NUR](https://github.com/nix-community/NUR).
 
 Afterwards, enable this repository's binary cache. This hosts a precompiled binary of all packages.
