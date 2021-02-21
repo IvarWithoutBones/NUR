@@ -1,6 +1,6 @@
 { lib, stdenv, fetchFromGitHub, fetchurl, makeWrapper, makeDesktopItem, linkFarmFromDrvs
 , dotnet-sdk_5, dotnetPackages, dotnetCorePackages, cacert
-, SDL2, libX11, ffmpeg, openal, libsoundio
+, SDL2, libX11, libgdiplus, ffmpeg, openal, libsoundio
 , gtk3, gobject-introspection, gdk-pixbuf, wrapGAppsHook
 }:
 
@@ -9,6 +9,7 @@ let
     SDL2
     gtk3
     libX11
+    libgdiplus
     ffmpeg
     openal
     libsoundio
