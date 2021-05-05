@@ -4,13 +4,13 @@ let
 in {
   mainline = libsForQt5.callPackage ./base.nix rec {
     pname = "yuzu-mainline";
-    version = "607";
+    version = "608";
     branchName = branch;
     src = fetchFromGitHub {
       owner = "yuzu-emu";
       repo = "yuzu-mainline";
       rev = "mainline-0-${version}";
-      sha256 = "0fjnjwjdd6vmnllshsr0293gzq9f945vz1372vh3y216gb336hvs";
+      sha256 = "03pl5is4a4fffxc5lazf5l5cxppgfprcskkzizdh327qfcmw07pf";
       fetchSubmodules = true;
     };
   };
