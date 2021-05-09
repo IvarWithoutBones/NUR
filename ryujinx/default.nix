@@ -1,10 +1,18 @@
 { lib, stdenv, fetchFromGitHub, fetchurl, makeWrapper, makeDesktopItem, linkFarmFromDrvs
 , dotnet-sdk_5, dotnetPackages, dotnetCorePackages, cacert
-, SDL2, libX11, libgdiplus, ffmpeg, openal, libsoundio
+, SDL2, libX11, libgdiplus, ffmpeg, openal, libsoundio, sndio
 , gtk3, gobject-introspection, gdk-pixbuf, wrapGAppsHook
 }:
 
 let
+  # TODO: remove this when https://github.com/NixOS/nixpkgs/pull/122352 gets merged
+  patchedSndio = (sndio.overrideAttrs (attrs: {
+    src = fetchurl {
+      url = "http://www.sndio.org/sndio-1.8.0.tar.gz";
+      sha256 = "027hlqji0h2cm96rb8qvkdmwxl56l59bgn828nvmwak2c2i5k703";
+    };
+  }));
+
   runtimeDeps = [
     SDL2
     gtk3
@@ -13,6 +21,7 @@ let
     ffmpeg
     openal
     libsoundio
+    patchedSndio
   ];
 in stdenv.mkDerivation rec {
   pname = "ryujinx";
