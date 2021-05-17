@@ -1,8 +1,16 @@
 diff --git a/Ryujinx/Configuration/LoggerModule.cs b/Ryujinx/Configuration/LoggerModule.cs
-index 44631ea0..5801c964 100644
+index 44631ea0..534576bc 100644
 --- a/Ryujinx/Configuration/LoggerModule.cs
 +++ b/Ryujinx/Configuration/LoggerModule.cs
-@@ -74,7 +74,7 @@ namespace Ryujinx.Configuration
+@@ -1,6 +1,7 @@
+ ﻿using Ryujinx.Common;
+ using Ryujinx.Common.Logging;
+ using System;
++using System.IO;
+ 
+ namespace Ryujinx.Configuration
+ {
+@@ -74,7 +75,7 @@ namespace Ryujinx.Configuration
              if (e.NewValue)
              {
                  Logger.AddTarget(new AsyncLogTargetWrapper(
