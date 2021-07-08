@@ -82,7 +82,7 @@ in stdenv.mkDerivation rec {
 
     # TODO: fix this hack https://github.com/Ryujinx/Ryujinx/issues/2349
     mkdir -p $out/lib/sndio-6
-    cp ${sndio}/lib/libsndio.so $out/lib/sndio-6/libsndio.so.6
+    ln -s ${sndio}/lib/libsndio.so $out/lib/sndio-6/libsndio.so.6
 
     makeWrapper $out/lib/ryujinx/Ryujinx $out/bin/Ryujinx \
       --set DOTNET_ROOT "${dotnetCorePackages.net_5_0}" \
