@@ -1,7 +1,7 @@
 { lib, stdenv, fetchFromGitHub, fetchurl, makeWrapper, makeDesktopItem, linkFarmFromDrvs
 , dotnet-sdk_5, dotnetPackages, dotnetCorePackages, cacert
 , libX11, libgdiplus, ffmpeg
-, SDL2_mixer, openal, libsoundio, sndio
+, SDL2_mixer, openal, libsoundio, sndio, pulseaudio
 , gtk3, gobject-introspection, gdk-pixbuf, wrapGAppsHook
 }:
 
@@ -15,6 +15,7 @@ let
     openal
     libsoundio
     sndio
+    pulseaudio
   ];
 in stdenv.mkDerivation rec {
   pname = "ryujinx";
