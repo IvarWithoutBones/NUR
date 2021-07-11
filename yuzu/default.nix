@@ -1,4 +1,4 @@
-{ branch ? "mainline", libsForQt5, fetchFromGitHub }:
+{ branch ? "mainline", libsForQt5, fetchFromGitHub, gcc11Stdenv }:
 let
   inherit libsForQt5 fetchFromGitHub;
 in {
@@ -13,6 +13,7 @@ in {
       sha256 = "0c3a4v9bxfx8fz4pal5s2vvc6w8vmss1k2xa4fxfkl6b7b6si97c";
       fetchSubmodules = true;
     };
+    stdenv = gcc11Stdenv;
   };
   early-access = libsForQt5.callPackage ./base.nix rec {
     pname = "yuzu-ea";
@@ -25,5 +26,6 @@ in {
       sha256 = "0za63jmddzcf6igp5xhd29bxqgkr9kqandnk9k5k51ccjrs197fd";
       fetchSubmodules = true;
     };
+    stdenv = gcc11Stdenv;
   };
 }.${branch}
