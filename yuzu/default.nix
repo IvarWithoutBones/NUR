@@ -13,7 +13,6 @@ in {
       sha256 = "1qwrqm806k9nbb5rmsdj0pxff2aihy0mrzi2awqdh8g8j1wn6jnd";
       fetchSubmodules = true;
     };
-    stdenv = gcc11Stdenv;
   };
   early-access = libsForQt5.callPackage ./base.nix rec {
     pname = "yuzu-ea";
