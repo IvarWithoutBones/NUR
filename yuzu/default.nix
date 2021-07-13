@@ -1,4 +1,4 @@
-{ branch ? "mainline", libsForQt5, fetchFromGitHub, gcc11Stdenv }:
+{ branch ? "mainline", libsForQt5, fetchFromGitHub }:
 let
   inherit libsForQt5 fetchFromGitHub;
 in {
@@ -25,6 +25,5 @@ in {
       sha256 = "16nz08xc3cgs46imii9a8nfvyazl4r46v6af47ba1gf5ni5fqsny";
       fetchSubmodules = true;
     };
-    stdenv = gcc11Stdenv;
   };
 }.${branch}
