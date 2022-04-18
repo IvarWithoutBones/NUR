@@ -49,7 +49,7 @@ jobs:
     - name: Build nix packages
       run: nix run --quiet -I 'nixpkgs=channel:nixpkgs-unstable' nixpkgs.nix-build-uncached -c nix-build-uncached ci.nix -A cacheOutputs
     - name: Push changes
-      uses: actions-x/commit@v2
+      uses: actions-x/commit@v5
       with:
         name: gh-actions
         message: Update packages to their latest version
