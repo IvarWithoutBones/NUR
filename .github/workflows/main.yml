@@ -27,7 +27,7 @@ jobs:
     - name: Update repository
       run: git pull -f
     - name: Install nix
-      uses: cachix/install-nix-action@v13
+      uses: cachix/install-nix-action@v20
       with:
         nix_path: "${{ matrix.nixPath }}"
     - name: Show nixpkgs version
